@@ -8,12 +8,14 @@ import 'package:polymer/polymer.dart';
 
 part 'roman_numerals_test.dart';
 part 'turkish_numbers_test.dart';
+part 'credit_card_verifier_test.dart';
 
 main() {
   initPolymer().run(() {
     useHtmlConfiguration(true);
     roman_numerals_test();
     turkish_numbers_test();
+    credit_card_verifier_test();
   });
 }
 
