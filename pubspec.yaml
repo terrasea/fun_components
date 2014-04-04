@@ -6,9 +6,9 @@ homepage: https://github.com/terrasea/fun_components
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
-  credit_cat: 0.2.4
-  polymer: 0.9.5
-  roman_numerals: 1.0.2
-  turkish_numbers: 0.1.0
+  credit_cat: '>=0.2.4 <0.3.0'
+  polymer: '>=0.9.5 <0.10.0'
+  roman_numerals: '>=1.0.2 <2.0.0'
+  turkish_numbers: '>=0.1.0 <0.2.0'
 dev_dependencies:
-  scheduled_test: 0.10.1+1
+  scheduled_test: any
