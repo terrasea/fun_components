@@ -1,0 +1,42 @@
+library fun_components_test;
+
+import 'package:scheduled_test/scheduled_test.dart';
+import 'package:unittest/html_config.dart';
+import 'dart:html';
+import 'dart:async';
+import 'package:polymer/polymer.dart';
+
+part 'roman_numerals_test.dart';
+part 'turkish_numbers_test.dart';
+
+main() {
+  initPolymer().run(() {
+    useHtmlConfiguration(true);
+    roman_numerals_test();
+    turkish_numbers_test();
+  });
+}
+
+createElement(String html) =>
+  new Element.html(html, treeSanitizer: new NullTreeSanitizer());
+
+class NullTreeSanitizer implements NodeTreeSanitizer {
+  void sanitizeTree(node) {}
+}
+
+
+class PageComponent {
+  final PolymerElement component;
+
+  const PageComponent(this.component);
+
+  Future flush() {
+    Completer completer = new Completer();
+    component.async((_) => completer.complete());
+
+    return completer.future;
+  }
+
+
+  String get currentTextDisplay => component.shadowRoot.text;
+}
