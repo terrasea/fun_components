@@ -14,7 +14,7 @@ class CreditCardVerifierComponent extends PageComponent {
 }
 
 credit_card_verifier_test() {
-  solo_group('[Credit Card verifier]', () {
+  group('[Credit Card verifier]', () {
     var ccv_component;
 
     setUp(() {
