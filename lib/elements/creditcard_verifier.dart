@@ -13,7 +13,6 @@ class CreditCardVerifierElement extends PolymerElement {
     try {
       var card = new creditCat(number);
       $['cardnumber'].style.borderColor = card.valid ? "blue" : "red";
-      print(card.valid);
     } on FormatException {
       $['cardnumber'].style.borderColor = "red";
     }
