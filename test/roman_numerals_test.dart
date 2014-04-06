@@ -19,7 +19,7 @@ roman_numerals_test() {
       schedule(() {
         PolymerElement el = createElement('<roman-numeral></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, "10");
+        roman_component = new RomanNumeralComponent(el, 10);
 
         return roman_component.flush();
       });
@@ -34,7 +34,7 @@ roman_numerals_test() {
       schedule(() {
         PolymerElement el = createElement('<roman-numeral></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, "9");
+        roman_component = new RomanNumeralComponent(el, 9);
 
         return roman_component.flush();
       });
@@ -49,7 +49,7 @@ roman_numerals_test() {
       schedule(() {
         PolymerElement el = createElement('<roman-numeral></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, "2000");
+        roman_component = new RomanNumeralComponent(el, 2000);
 
         return roman_component.flush();
       });
@@ -59,5 +59,8 @@ roman_numerals_test() {
         expect(roman_component.currentTextDisplay.trim(), equals('MM'));
       });
     });
+
+    //@TODO: decide if it's worth testing for exceptions when number > 3999 or < 1
+
   });
 }

@@ -7,11 +7,11 @@ import 'package:turkish_numbers/turkish_numbers.dart';
 @CustomTag('turkish-number')
 class TurkishNumberElement extends PolymerElement {
   @observable String turkish_number;
-  @published String number;
+  @published int number;
 
   TurkishNumberElement.created() : super.created();
 
   numberChanged() {
-    turkish_number = turkishIntToString(int.parse(number));
+    turkish_number = turkishIntToString(number);
   }
 }

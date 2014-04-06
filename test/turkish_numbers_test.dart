@@ -19,7 +19,7 @@ turkish_numbers_test() {
       schedule(() {
         PolymerElement el = createElement('<turkish-number></turkish-number>');
         document.body.append(el);
-        turkish_component = new RomanNumeralComponent(el, "0");
+        turkish_component = new RomanNumeralComponent(el, 0);
 
         return turkish_component.flush();
       });
@@ -34,7 +34,7 @@ turkish_numbers_test() {
       schedule(() {
         PolymerElement el = createElement('<turkish-number></turkish-number>');
         document.body.append(el);
-        turkish_component = new RomanNumeralComponent(el, "1000000000000");
+        turkish_component = new RomanNumeralComponent(el, 1000000000000);
 
         return turkish_component.flush();
       });

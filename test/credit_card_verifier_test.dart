@@ -5,9 +5,17 @@ class CreditCardVerifierComponent extends PageComponent {
 
   TextInputElement get currentCardNumberInput => component.$['cardnumber'];
   String get currentNumberValue => component.number;
+  String get currentCSSBorderErrorColour => component.errorColour;
 
   Future updateNumberValue(val) {
     component.number = val;
+
+    return flush();
+  }
+
+
+  Future updateCSSBorderErrorColour(colour) {
+    component.errorColour = colour;
 
     return flush();
   }
@@ -43,7 +51,7 @@ credit_card_verifier_test() {
     });
 
 
-    test('outlines in blue, credit card input, on valid card number', () {
+    test('no red outline, credit card input, on valid card number', () {
       schedule(() {
         return ccv_component.updateNumberValue('4111111111111111');
       });
@@ -51,9 +59,26 @@ credit_card_verifier_test() {
 
       schedule(() {
         TextInputElement input = ccv_component.currentCardNumberInput;
-        expect(input.style.borderColor, equals('blue'));
+        expect(input.style.borderColor, equals(''));
       });
     });
+
+
+    test('outline colour is green on error', () {
+      schedule(() {
+        return ccv_component.updateCSSBorderErrorColour('green');
+      });
+
+      schedule(() {
+        return ccv_component.updateNumberValue('1111111111111111');
+      });
+
+      schedule(() {
+        TextInputElement input = ccv_component.currentCardNumberInput;
+        expect(input.style.borderColor, equals('green'));
+      });
+    });
+
 
   });
 }
