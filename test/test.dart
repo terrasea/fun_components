@@ -9,6 +9,7 @@ import 'package:polymer/polymer.dart';
 part 'roman_numerals_test.dart';
 part 'turkish_numbers_test.dart';
 part 'credit_card_verifier_test.dart';
+part 'markdown_markup_test.dart';
 
 main() {
   initPolymer().run(() {
@@ -16,6 +17,7 @@ main() {
     roman_numerals_test();
     turkish_numbers_test();
     credit_card_verifier_test();
+    markdown_markup_test();
   });
 }
 

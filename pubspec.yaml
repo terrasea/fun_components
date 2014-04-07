@@ -1,5 +1,5 @@
 name: fun_components
-version: 0.0.2
+version: 0.1.0
 author: James Hurford <terrasea@gmail.com>
 description: Polymer components made for fun
 homepage: https://github.com/terrasea/fun_components
@@ -7,6 +7,7 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   credit_cat: '>=0.2.4 <0.3.0'
+  markdown: '>=0.6.0+1 <0.7.0'
   polymer: '>=0.9.5 <0.10.0'
   roman_numerals: '>=1.0.2 <2.0.0'
   turkish_numbers: '>=0.1.0 <0.2.0'

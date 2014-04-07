@@ -7,6 +7,8 @@ Polymer components made for fun
 
 The aim is to create Polymer Elements to carry out simple trivial tasks, like translating a number to roman numerals or turkish.
 
+Now with a Markdown Polymer element.
+
 ## Installing
 
 Add this to your package's pubspec.yaml file:
@@ -83,4 +85,25 @@ For the credit card verifier, which may or may not be usable in html forms:
 </body>
 ```
 
-There will be more to come.  I'm planning on adding a Markdown Polymer element.
+For the Markdown element:
+
+```
+<head>
+  ...
+  <link rel="import" href="packages/fun_components/elements/markdown-markup.html">
+  ...
+</head>
+<body>
+  ...
+  <markdown-markup>
+  Markdown inserted here
+  ======================
+  
+  <strong>With normal HTML elements retained</strong>
+   
+  </markdown-markup>
+  ...
+</body>
+```
+
+There will be more to come.
