@@ -2,7 +2,7 @@
 
 * Created &lt;roman-numerals&gt; polymer element
 * Created &lt;turkish-number&gt; polymer element
-* Created &ltcreditcard-verifier&gt; polymer element
+* Created &lt;creditcard-verifier&gt; polymer element
 
 ## 0.1.0
 
