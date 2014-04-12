@@ -5,11 +5,15 @@ class MarkdownMarkupComponent extends PageComponent {
   MarkdownMarkupComponent(el) : super(el);
 
   Element get currentDestinationElement => component.$['destination'];
+
+  Future flush() {
+    return super.flush().then((_) => super.flush());
+  }
 }
 
 //not testing if all markdown features works, as the used markdown package should do those tests.
 markdown_markup_test() {
-  solo_group('[Markdown Markup]', () {
+  group('[Markdown Markup]', () {
     MarkdownMarkupComponent markdown_component;
     setUp(() {
       schedule(() {
@@ -24,15 +28,10 @@ heading
         document.body.append(el);
         markdown_component = new MarkdownMarkupComponent(el);
 
-        return markdown_component.flush().then((_) {
-          /*Completer completer = new Completer();
-
-          new Timer(new Duration(milliseconds: 250), () => completer.complete());
-
-          return completer.future;*/
-          return markdown_component.flush();
-        });
+        return markdown_component.flush();
       });
+
+      currentSchedule.onComplete.schedule(() => markdown_component.component.remove());
     });
 
 

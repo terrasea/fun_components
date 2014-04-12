@@ -1,3 +1,6 @@
+library fun_components.markdown_markup;
+
+
 import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'package:markdown/markdown.dart' show markdownToHtml, InlineSyntax, TextSyntax;
