@@ -77,5 +77,21 @@ gravatar_image_test() {
     });
 
 
+    test('', () {
+      schedule(() {
+        PolymerElement el = createElement('<gravatar-image email="$email" size="40"></gravatar-image>');
+        document.body.append(el);
+        gravatar_component = new GravatarImageComponent(el);
+
+        return gravatar_component.flush();
+      });
+
+      schedule(() {
+        expect(gravatar_component.currentGravatarSize, equals(40));
+        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40'));
+        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40'));
+      });
+    });
+
   });
 }
