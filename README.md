@@ -106,4 +106,22 @@ For the Markdown element:
 </body>
 ```
 
+For Gravatar Image
+
+```
+<head>
+  ...
+  <link rel="import" href="packages/fun_components/elements/gravatar-image.html">
+  ...
+</head>
+<body>
+  ...
+  <gravatar-image email="someemail@example.com" size="40" defaultImage="retro" rating="pg"></gravatar-image>
+  <br> <!-- OR if you want to force default image -->
+  <gravatar-image email="someemail@example.com" forceDefault></gravatar-image>
+  ...
+</body>
+```
+
+
 There will be more to come.
