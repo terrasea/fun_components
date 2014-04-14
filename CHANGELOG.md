@@ -16,3 +16,6 @@
 * Made markdown_markup.dart into a library fun_components.markdown_markup
 * Created a &lt;gravatar-image&gt; polymer element where you can specify the size of the image to use.
 
+## 0.2.1
+
+* Added remaining defaultImage, forceDefault and ratings attributes to &lt;gravatar-image&gt; polymer element

@@ -8,8 +8,10 @@ import 'package:gravatar/gravatar.dart';
 class GravatarImageElement extends PolymerElement {
   @published String email;
   @observable String imageURL;
-  @published int size = 0;
-  @published String css;
+  @published int size = null;
+  @published String defaultImage = null;
+  @published bool forceDefault = false;
+  @published String rating = null;
 
   GravatarImageElement.created() : super.created();
 
@@ -17,6 +19,6 @@ class GravatarImageElement extends PolymerElement {
   enteredView() {
     super.enteredView();
 
-    imageURL = size == 0 ? new Gravatar(email).imageUrl() : new Gravatar(email).imageUrl(size: size);
+    imageURL = new Gravatar(email).imageUrl(size: size, defaultImage: defaultImage, forceDefault: forceDefault, rating: rating);
   }
 }

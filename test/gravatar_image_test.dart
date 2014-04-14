@@ -53,7 +53,7 @@ gravatar_image_test() {
       });
 
       schedule(() {
-        expect(gravatar_component.currentGravatarSize, equals(0));
+        expect(gravatar_component.currentGravatarSize, isNull);
         expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b'));
         expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b'));
       });
@@ -77,9 +77,9 @@ gravatar_image_test() {
     });
 
 
-    test('', () {
+    test('default image', () {
       schedule(() {
-        PolymerElement el = createElement('<gravatar-image email="$email" size="40"></gravatar-image>');
+        PolymerElement el = createElement('<gravatar-image email="$email" defaultImage="images/GoogleSearchBirthday.png"></gravatar-image>');
         document.body.append(el);
         gravatar_component = new GravatarImageComponent(el);
 
@@ -87,11 +87,59 @@ gravatar_image_test() {
       });
 
       schedule(() {
-        expect(gravatar_component.currentGravatarSize, equals(40));
-        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40'));
-        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40'));
+        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?d=images/GoogleSearchBirthday.png'));
+        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?d=images/GoogleSearchBirthday.png'));
       });
     });
+
+
+    test('default image and size', () {
+      schedule(() {
+        PolymerElement el = createElement('<gravatar-image email="$email" size="40" defaultImage="images/GoogleSearchBirthday.png"></gravatar-image>');
+        document.body.append(el);
+        gravatar_component = new GravatarImageComponent(el);
+
+        return gravatar_component.flush();
+      });
+
+      schedule(() {
+        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40&d=images/GoogleSearchBirthday.png'));
+        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?s=40&d=images/GoogleSearchBirthday.png'));
+      });
+    });
+
+
+    test('force default', () {
+      schedule(() {
+        PolymerElement el = createElement('<gravatar-image email="$email" forceDefault></gravatar-image>');
+        document.body.append(el);
+        gravatar_component = new GravatarImageComponent(el);
+
+        return gravatar_component.flush();
+      });
+
+      schedule(() {
+        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?f=y'));
+        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?f=y'));
+      });
+    });
+
+
+    test('rating set', () {
+      schedule(() {
+        PolymerElement el = createElement('<gravatar-image email="$email" rating="pg"></gravatar-image>');
+        document.body.append(el);
+        gravatar_component = new GravatarImageComponent(el);
+
+        return gravatar_component.flush();
+      });
+
+      schedule(() {
+        expect(gravatar_component.currentGravatarImageURL, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?r=pg'));
+        expect(gravatar_component.currentGravatarImage.src, equals('https://secure.gravatar.com/avatar/658b1158409b348bb2cb3e5bef734d1b?r=pg'));
+      });
+    });
+
 
   });
 }
