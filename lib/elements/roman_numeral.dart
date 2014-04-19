@@ -6,7 +6,7 @@ import 'package:roman_numerals/roman_numerals.dart';
 @CustomTag('roman-numeral')
 class RomanNumeralElement extends PolymerElement {
   @observable String roman_numeral;
-  @published int number = 1;
+  @published int number;
 
   RomanNumeralElement.created() : super.created();
 

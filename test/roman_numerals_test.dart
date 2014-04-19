@@ -15,6 +15,21 @@ roman_numerals_test() {
     });
 
 
+    test("display 1 as I", () {
+      schedule(() {
+        PolymerElement el = createElement('<roman-numeral></roman-numeral>');
+        document.body.append(el);
+        roman_component = new RomanNumeralComponent(el, 1);
+
+        return roman_component.flush();
+      });
+
+      schedule(() {
+        expect(roman_component.currentTextDisplay.trim(), equals('I'));
+      });
+    });
+
+
     test("display 10 as X", () {
       schedule(() {
         PolymerElement el = createElement('<roman-numeral></roman-numeral>');
