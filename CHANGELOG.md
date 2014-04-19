@@ -19,3 +19,7 @@
 ## 0.2.1
 
 * Added remaining defaultImage, forceDefault and ratings attributes to &lt;gravatar-image&gt; polymer element
+
+## 0.2.2
+
+* Fixed a bug where roman-numerals would be blank when set to 1
