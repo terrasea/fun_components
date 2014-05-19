@@ -124,4 +124,19 @@ For Gravatar Image
 ```
 
 
+For Text to Voice (a text to speech element)
+
+```
+<head>
+  ...
+  <link rel="import" href="packages/fun_components/elements/text-speech.html">
+  ...
+</head>
+<body>
+  ...
+  <text-speech>I have something to say, it is better to burn out, than to fade away</text-speech>
+  ...
+</body>
+```
+
 There will be more to come.

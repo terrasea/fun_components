@@ -23,3 +23,7 @@
 ## 0.2.2
 
 * Fixed a bug where roman-numerals would be blank when set to 1
+
+## 0.3.0
+
+* Added &lt;text-speech&gt; element
