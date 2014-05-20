@@ -9,6 +9,8 @@ if [[ $? -ne 0 ]]; then
     PATH=$cs_path:$PATH
 fi
 
+echo "running content_shell"
+
 results=$(content_shell --args --dump-render-tree test/index.html 2>&1)
 #results=$(DumpRenderTree test/index.html 2>&1)
 echo -e "$results"
