@@ -17,15 +17,28 @@ part 'text_speech_test.dart';
 
 main() {
   initPolymer().run(() {
-    useHtmlConfiguration(true);
+    //useHtmlConfiguration(true);
     roman_numerals_test();
     turkish_numbers_test();
     credit_card_verifier_test();
     markdown_markup_test();
     gravatar_image_test();
     text_speech_test();
+    pollForDone(testCases);
   });
 }
+
+
+pollForDone(List tests) {
+  if (tests.every((t)=> t.isComplete)) {
+    window.postMessage('dart-main-done', window.location.href);
+    return;
+  }
+
+  var wait = new Duration(milliseconds: 100);
+  new Timer(wait, ()=> pollForDone(tests));
+}
+
 
 createElement(String html) =>
   new Element.html(html, treeSanitizer: new NullTreeSanitizer());
