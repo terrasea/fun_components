@@ -17,14 +17,14 @@ part 'text_speech_test.dart';
 
 main() {
   initPolymer().run(() {
-    //useHtmlConfiguration(true);
+    useHtmlConfiguration(true);
     roman_numerals_test();
     turkish_numbers_test();
     credit_card_verifier_test();
     markdown_markup_test();
     gravatar_image_test();
-    text_speech_test();
-    pollForDone(testCases);
+    //text_speech_test();
+    //pollForDone(testCases);
   });
 }
 
