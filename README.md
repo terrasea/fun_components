@@ -1,8 +1,6 @@
 fun_components
 ==============
 
-[![Build Status](https://drone.io/github.com/terrasea/fun_components/status.png)](https://drone.io/github.com/terrasea/fun_components/latest)
-
 Polymer components made for fun
 
 The aim is to create Polymer Elements to carry out simple trivial tasks, like translating a number to roman numerals or turkish.
