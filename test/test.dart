@@ -17,6 +17,13 @@ import 'package:polymer/polymer.dart';
 
 main() {
   useHtmlConfiguration(true);
+  group('[dummy test group]', () {
+    test('dummy test', () {
+      schedule(() {
+        expect(true, isTrue);
+      });
+    });
+  });
   //initPolymer();
   //.run(() {
   //roman_numerals_test();
