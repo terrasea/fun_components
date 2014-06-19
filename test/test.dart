@@ -6,32 +6,26 @@ import 'dart:html';
 import 'dart:async';
 import 'package:polymer/polymer.dart';
 
-//import 'package:fun_components/elements/text_speech.dart' show SpeechSynthesiser;
+import 'package:fun_components/elements/text_speech.dart' show SpeechSynthesiser;
 
 part 'roman_numerals_test.dart';
-//part 'turkish_numbers_test.dart';
-//part 'credit_card_verifier_test.dart';
-//part 'markdown_markup_test.dart';
-//part 'gravatar_image_test.dart';
-//part 'text_speech_test.dart';
+part 'turkish_numbers_test.dart';
+part 'credit_card_verifier_test.dart';
+part 'markdown_markup_test.dart';
+part 'gravatar_image_test.dart';
+part 'text_speech_test.dart';
 
 main() {
   useHtmlConfiguration(true);
-  setUp((){
-    schedule(() {
-      initPolymer();
-    });
-  });
 
-  //.run(() {
+  initPolymer();
+
   roman_numerals_test();
-  //turkish_numbers_test();
-  //credit_card_verifier_test();
-  //markdown_markup_test();
-  //gravatar_image_test();
-  //text_speech_test();
-  //pollForDone(testCases);
-  //});
+  turkish_numbers_test();
+  credit_card_verifier_test();
+  markdown_markup_test();
+  gravatar_image_test();
+  text_speech_test();
 }
 
 
@@ -55,12 +49,13 @@ class NullTreeSanitizer implements NodeTreeSanitizer {
 
 
 class PageComponent {
-  var component;
+  PolymerElement component;
 
   PageComponent(this.component);
 
   Future flush() {
     Completer completer = new Completer();
+
     component.async((_) => completer.complete());
 
     return completer.future;
