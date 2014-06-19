@@ -8,7 +8,7 @@ import 'package:polymer/polymer.dart';
 
 //import 'package:fun_components/elements/text_speech.dart' show SpeechSynthesiser;
 
-//part 'roman_numerals_test.dart';
+part 'roman_numerals_test.dart';
 //part 'turkish_numbers_test.dart';
 //part 'credit_card_verifier_test.dart';
 //part 'markdown_markup_test.dart';
@@ -17,16 +17,14 @@ import 'package:polymer/polymer.dart';
 
 main() {
   useHtmlConfiguration(true);
-  group('[dummy test group]', () {
-    test('dummy test', () {
-      schedule(() {
-        expect(true, isTrue);
-      });
+  setUp((){
+    schedule(() {
+      initPolymer();
     });
   });
-  //initPolymer();
+
   //.run(() {
-  //roman_numerals_test();
+  roman_numerals_test();
   //turkish_numbers_test();
   //credit_card_verifier_test();
   //markdown_markup_test();
