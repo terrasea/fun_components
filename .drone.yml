@@ -1,0 +1,8 @@
+image: dart
+script:
+ - dart --version
+ - pub get
+notify:
+ email:
+   recipients:
+     - terrasea@gmail.com
