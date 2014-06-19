@@ -27,3 +27,8 @@
 ## 0.3.0
 
 * Added &lt;text-speech&gt; element
+
+## 0.4.0
+
+* Updated to the latest stable version of Polymer Dart
+* Removed drone.io badge, which is showing a false negative (test it yourself if you're worried, they will pass, but not on Drone.io)
