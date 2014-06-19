@@ -21,7 +21,7 @@ main() {
     roman_numerals_test();
     turkish_numbers_test();
     credit_card_verifier_test();
-    markdown_markup_test();
+    //markdown_markup_test();
     gravatar_image_test();
     text_speech_test();
     //pollForDone(testCases);
