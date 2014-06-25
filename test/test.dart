@@ -14,6 +14,7 @@ part 'credit_card_verifier_test.dart';
 part 'markdown_markup_test.dart';
 part 'gravatar_image_test.dart';
 part 'text_speech_test.dart';
+part 'ajax_get_test.dart';
 
 main() {
   useHtmlConfiguration(true);
@@ -26,6 +27,7 @@ main() {
   markdown_markup_test();
   gravatar_image_test();
   text_speech_test();
+  ajax_get_test();
 }
 
 

@@ -15,8 +15,8 @@ class PolyMarkdown extends PolymerElement {
 
 
   @override
-  void enteredView() {
-    super.enteredView();
+  void attached() {
+    super.attached();
 
     _tranformAndDisplayContainedMarkdown();
   }

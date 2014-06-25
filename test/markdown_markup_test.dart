@@ -7,7 +7,12 @@ class MarkdownMarkupComponent extends PageComponent {
   Element get currentDestinationElement => component.$['destination'];
 
   Future flush() {
-    return super.flush().then((_) => super.flush());
+    Completer completer = new Completer();
+    new Timer(new Duration(milliseconds: 500), () {
+      super.flush().then((_) => super.flush().then((_) => completer.complete()));
+    });
+
+    return completer.future;
   }
 }
 
@@ -15,9 +20,10 @@ class MarkdownMarkupComponent extends PageComponent {
 markdown_markup_test() {
   group('[Markdown Markup]', () {
     MarkdownMarkupComponent markdown_component;
+    var markdown;
     setUp(() {
       schedule(() {
-        var markdown = """
+        markdown = """
 heading
 =======
 
@@ -32,6 +38,21 @@ heading
       });
 
       currentSchedule.onComplete.schedule(() => markdown_component.component.remove());
+    });
+
+
+    test('destination exists', () {
+      schedule(() {
+        expect(markdown_component.currentDestinationElement, isNotNull);
+      });
+    });
+
+
+    test('destination contents not same as markdown', () {
+      schedule(() {
+        expect(markdown_component.currentDestinationElement.text, isNot(isEmpty));
+        expect(markdown_component.currentDestinationElement.text, isNot(equals(markdown)));
+      });
     });
 
 

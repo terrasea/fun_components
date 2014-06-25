@@ -16,8 +16,8 @@ class GravatarImageElement extends PolymerElement {
   GravatarImageElement.created() : super.created();
 
 
-  enteredView() {
-    super.enteredView();
+  attached() {
+    super.attached();
 
     imageURL = new Gravatar(email).imageUrl(size: size, defaultImage: defaultImage, forceDefault: forceDefault, rating: rating);
   }

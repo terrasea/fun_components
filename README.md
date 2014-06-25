@@ -5,7 +5,7 @@ Polymer components made for fun
 
 The aim is to create Polymer Elements to carry out simple trivial tasks, like translating a number to roman numerals or turkish.
 
-Now with a Markdown Polymer element.
+Now with a AJAX GET element.
 
 ## Installing
 
@@ -135,6 +135,39 @@ For Text to Voice (a text to speech element)
   <text-speech>I have something to say, it is better to burn out, than to fade away</text-speech>
   ...
 </body>
+```
+
+
+For ajax get (an ajax element for doing get requests)
+
+```
+<head>
+  ...
+  <link rel="import" href="packages/fun_components/elements/ajax-get.html">
+  ...
+</head>
+<body>
+  ...
+  <text-speech url="someurl" auto on-get-error="{{handleError}}" on-get-request="{{handleResponse}}" on-get-complete="{{handleCompleted}}"></ajax-get>
+  ...
+</body>
+
+...
+
+void handleError(e) {
+  int status = e.detail;  //response code like 404 or 500
+}
+
+
+void handleResponse(e) {
+  var responseText = e.detail;
+}
+
+
+void handleCompleted(e) {
+  //do any post response stuff here.  No message is passed via the event
+}
+...
 ```
 
 There will be more to come.
