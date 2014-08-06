@@ -32,3 +32,11 @@
 
 * Updated to the latest stable version of Polymer Dart
 * Removed drone.io badge, which is showing a false negative (test it yourself if you're worried, they will pass, but not on Drone.io)
+
+## 0.5.0
+
+* Added &lt;ajax-get&gt; element
+
+## 0.5.1
+
+* Updated pubspec.yaml to use the latest available dependancies
