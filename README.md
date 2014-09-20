@@ -170,4 +170,19 @@ void handleCompleted(e) {
 ...
 ```
 
+For RSS Feeds
+
+```
+<head>
+  ...
+  <link rel="import" href="packages/fun_components/elements/rss-feed.html">
+  ...
+</head>
+<body>
+  ...
+  <rss-feed href="syndication.rss"></rss-feed>
+  ...
+</body>
+```
+
 There will be more to come.

@@ -15,6 +15,7 @@ part 'markdown_markup_test.dart';
 part 'gravatar_image_test.dart';
 part 'text_speech_test.dart';
 part 'ajax_get_test.dart';
+part 'rss_feed_test.dart';
 
 main() {
   useHtmlConfiguration(true);
@@ -28,6 +29,7 @@ main() {
   gravatar_image_test();
   text_speech_test();
   ajax_get_test();
+  rss_feed_test();
 }
 
 

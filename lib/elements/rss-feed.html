@@ -1,0 +1,16 @@
+<link rel="import" href="../../../packages/polymer/polymer.html">
+
+<link rel="import" href="../../../packages/fun_components/elements/rss-item.html">
+<link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
+
+<polymer-element name="rss-feed" attributes="auto href">
+  <template>
+    <core-ajax-dart id="ajax" _url="{{ href }}" response="{{ responseXML }}"></core-ajax-dart>
+    <template repeat="{{ item in items }}">
+      <rss-item title="{{ item.title }}"
+                link="{{ item.link }}"
+                description="{{ item.description }}"></rss-item>
+    </template>
+  </template>
+  <script type="application/dart" src="rss_feed.dart"></script>
+</polymer-element>

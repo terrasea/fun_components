@@ -40,3 +40,9 @@
 ## 0.5.1
 
 * Updated pubspec.yaml to use the latest available dependancies
+
+## 0.5.2
+
+* Added <rss-feed ...> and <rss-item ..> elements
+* Updated some of the elements to use _src and _href to overcome the problems with transformers rewriting them
+ 

@@ -3,11 +3,18 @@ import 'package:polymer/polymer.dart';
 import 'dart:html';
 
 @CustomTag('ajax-get')
-class AjaxGetElement extends PolymerElement {
-  @observable @published String url = "";
-  @published bool auto = false;
+class AjaxGet extends PolymerElement {
+  @PublishedProperty(reflect: true)
+  String get url => readValue(#url);
+  set url(val) => writeValue(#url, val);
 
-  AjaxGetElement.created() : super.created();
+  @PublishedProperty(reflect: true)
+  bool get auto => readValue(#auto) != null ? readValue(#auto) : false;
+  set auto(val) => writeValue(#auto, val);
+
+
+
+  AjaxGet.created() : super.created();
 
 
   attached() {
@@ -19,7 +26,6 @@ class AjaxGetElement extends PolymerElement {
 
   _fireResponse(HttpRequest request) {
     String result = request.responseText;
-    print("Result: $result");
     fire('get-response', detail: result);
   }
 
@@ -36,9 +42,11 @@ class AjaxGetElement extends PolymerElement {
 
 
   go() {
+    print('go');
     HttpRequest.request(url)
       .then(_fireResponse)
       .catchError(_fireError)
-      .whenComplete(_fireComplete);
+      .whenComplete(_fireComplete)
+      ;
   }
 }
