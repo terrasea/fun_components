@@ -22,24 +22,21 @@ markdown_markup_test() {
     MarkdownMarkupComponent markdown_component;
     var markdown;
     setUp(() {
-      schedule(() {
         markdown = """
 heading
 =======
-
 <strong id="someid">strong element</strong>
-
 """;
         PolymerElement el = createElement('<markdown-markup>$markdown</markdown-markup>');
         document.body.append(el);
         markdown_component = new MarkdownMarkupComponent(el);
 
         return markdown_component.flush();
-      });
 
-      currentSchedule.onComplete.schedule(() => markdown_component.component.remove());
+//      currentSchedule.onComplete.schedule(() => markdown_component.component.remove());
     });
 
+    tearDown(() => markdown_component.component.remove());
 
     test('destination exists', () {
       schedule(() {
@@ -59,7 +56,7 @@ heading
     test('conmtains heading h1 element', () {
       schedule(() {
         expect(markdown_component.currentDestinationElement.querySelector('h1'), isNotNull);
-        expect(markdown_component.currentDestinationElement.querySelector('h1').text, equals('heading'));
+        expect(markdown_component.currentDestinationElement.querySelector('h1').text.trim(), equals('heading'));
       });
     });
 

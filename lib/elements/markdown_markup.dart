@@ -1,11 +1,13 @@
+@HtmlImport('markdown-markup.html')
 library fun_components.markdown_markup;
 
 
 import 'package:polymer/polymer.dart';
+import 'package:web_components/web_components.dart';
 import 'dart:html';
 import 'package:markdown/markdown.dart' show markdownToHtml, InlineSyntax, TextSyntax;
 
-@CustomTag('markdown-markup')
+@PolymerRegister('markdown-markup')
 class PolyMarkdown extends PolymerElement {
 
   List<InlineSyntax> nyanSyntax =
@@ -14,17 +16,28 @@ class PolyMarkdown extends PolymerElement {
   PolyMarkdown.created() : super.created();
 
 
-  @override
   void attached() {
     super.attached();
 
     _tranformAndDisplayContainedMarkdown();
+
   }
 
 
+//  void async(callback, [timeout]) {
+//    super.async(_callback(callback), timeout);
+//  }
+
+  Function _callback(callback) {
+    return callback;
+  }
+
   void _tranformAndDisplayContainedMarkdown() {
     //get the nodes with the markdown
-    List<Node> nodes = (shadowRoot.querySelector('content') as ContentElement).getDistributedNodes();
+
+    List<Node> nodes = new List.from(childNodes);
+
+    nodes.remove($['destination']);
 
     //transform these nodes to text, representing element tags as their text equivalent, then run them through the Markdown transformer
     String content = markdownToHtml(

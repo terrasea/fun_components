@@ -1,35 +1,55 @@
-import 'dart:html' show DivElement;
+@HtmlImport('rss-item.html')
+library fun_components.rss_item;
+
+import 'dart:html' show DivElement, NodeValidatorBuilder, NodeValidator, NodeTreeSanitizer;
 
 import 'package:polymer/polymer.dart';
+import 'package:web_components/web_components.dart';
 
 import 'package:fun_components/html_entity.dart' show HtmlEntityResolver;
 
-@CustomTag('rss-item')
+import '../rss_item.dart' as rssitem;
+
+@PolymerRegister('rss-item')
 class RSSItem extends PolymerElement {
-  @PublishedProperty(reflect: true)
-  String get title => readValue(#title);
-  set title(val) => writeValue(#title, val);
+  @Property(notify: true) String rssTitle;
 
-  @PublishedProperty(reflect: true)
-  String get link => readValue(#link);
-  set link(val) => writeValue(#link, val);
+  @Property(notify: true) String link;
 
-  @PublishedProperty(reflect: true)
-  String get description => readValue(#description);
-  set description(val) => writeValue(#description, val);
+  @Property(notify: true, observer: 'descriptionChanged') String description;
 
-  @PublishedProperty(reflect: true)
-  String get updated => readValue(#updated);
-  set updated(val) => writeValue(#updated, val);
+  @property String updated;
 
+  @Property(notify: true, observer: 'itemChanged') rssitem.RSSItem item;
 
-  @observable String parsedDescription = '';
+  @property String parsedDescription = '';
 
   HtmlEntityResolver _parser = new HtmlEntityResolver();
 
   RSSItem.created() : super.created();
 
-  descriptionChanged(old, current) {
-    ($['description'] as DivElement).appendHtml(_parser.parse(description));
+  @Observe('description')
+  void descriptionChanged([_, __]) {
+    var validatorBuilder = new NodeValidatorBuilder();
+    validatorBuilder.allowHtml5();
+
+    ($['description'] as DivElement)
+      ..appendHtml(_parser.parse(description), treeSanitizer: new RSSItemNodeTreeSanitiser())
+    ;
   }
+
+  @Observe('item')
+  void itemChanged([_, __]) {
+    set('rssTitle', item.title);
+    set('link', item.link);
+    set('description', item.description);
+  }
+}
+
+//abstract class RSSItemNodeValidator extends NodeValidator {
+//
+//}
+
+class RSSItemNodeTreeSanitiser implements NodeTreeSanitizer {
+  void sanitizeTree(node) {}
 }

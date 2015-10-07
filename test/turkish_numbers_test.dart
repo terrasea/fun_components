@@ -2,46 +2,62 @@ part of fun_components_test;
 
 class TurkishNumberComponent extends PageComponent {
 
-  TurkishNumberComponent(el, number) : super(el) {
-    component.number = number;
-  }
+  TurkishNumberComponent(el) : super(el);
+
+  String get displayedNumber => component.querySelector('#number').text;
 }
 
 turkish_numbers_test() {
   group("[Turkish numerals]", () {
-    var turkish_component;
+    TurkishNumberComponent turkish_component;
 
     setUp(() {
-      currentSchedule.onComplete.schedule(() => turkish_component.component.remove());
+//      currentSchedule.onComplete.schedule(() => );
     });
 
-    test("display 0 as sıfır", () {
-      schedule(() {
-        PolymerElement el = createElement('<turkish-number></turkish-number>');
-        document.body.append(el);
-        turkish_component = new RomanNumeralComponent(el, 0);
+    tearDown(() {
+      turkish_component.component.remove();
+    });
 
-        return turkish_component.flush();
-      });
+    test("display 0 as sıfır", () async {
+      PolymerElement el = createElement('<turkish-number number="0"></turkish-number>');
+      document.body.append(el);
+      turkish_component = new TurkishNumberComponent(el);
 
-      schedule(() {
-        expect(turkish_component.currentTextDisplay.trim(), equals('sıfır'));
-      });
+      await turkish_component.flush();
+
+      expect(turkish_component.displayedNumber.trim(), equals('sıfır'));
     });
 
 
-    test("display 1000000000000 as bir trilyon", () {
-      schedule(() {
-        PolymerElement el = createElement('<turkish-number></turkish-number>');
-        document.body.append(el);
-        turkish_component = new RomanNumeralComponent(el, 1000000000000);
+    test("display 1000000000000 as bir trilyon", ()  async {
+      PolymerElement el = createElement('<turkish-number number="1000000000000"></turkish-number>');
+      document.body.append(el);
+      turkish_component = new TurkishNumberComponent(el);
 
-        return turkish_component.flush();
-      });
+      await turkish_component.flush();
 
-      schedule(() {
-        expect(turkish_component.currentTextDisplay.trim(), equals('bir trilyon'));
-      });
+      expect(turkish_component.currentTextDisplay.trim(), equals('bir trilyon'));
+    });
+
+    test('set number from <content> of element', () async {
+      PolymerElement el = createElement('<turkish-number>1000000000000</turkish-number>');
+      document.body.append(el);
+      turkish_component = new TurkishNumberComponent(el);
+
+      await turkish_component.flush();
+
+      expect(turkish_component.currentTextDisplay.trim(), equals('bir trilyon'));
+    });
+
+    test('set number from <content> of element with a invalid number', () async {
+      PolymerElement el = createElement('<turkish-number>bir trilyon</turkish-number>');
+      document.body.append(el);
+      turkish_component = new TurkishNumberComponent(el);
+
+      await turkish_component.flush();
+
+      expect(turkish_component.currentTextDisplay.trim(), equals(''));
     });
   });
 }

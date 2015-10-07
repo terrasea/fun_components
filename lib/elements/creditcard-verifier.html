@@ -1,8 +1,6 @@
-<link rel="import" href="../../../packages/polymer/polymer.html">
-
-<polymer-element name="creditcard-verifier">
+<dom-module id="creditcard-verifier">
   <template>
-    <input id="cardnumber" type="text" value="{{number}}">
+    <input is="iron-input" id="cardnumber" type="text" bind-value="{{number}}" value="[[number]]">
   </template>
   <script type="application/dart" src="creditcard_verifier.dart"></script>
-</polymer-element>
+</dom-module>

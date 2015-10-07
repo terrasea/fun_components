@@ -10,7 +10,7 @@ class TextSpeechComponent extends PageComponent {
   Future flush() {
     return super.flush().then((_) {
       Completer completer = new Completer();
-      component.async((_) => completer.complete());
+      component.async(() => completer.complete());
 
       return completer.future;
     });
@@ -30,17 +30,15 @@ text_speech_test() {
     var textspeech_component;
 
     setUp(() {
-      schedule(() {
         //synthesiser.speak(uterance);
         PolymerElement el = createElement('<text-speech>We are one</text-speech>');
         document.body.append(el);
         textspeech_component = new TextSpeechComponent(el);
 
         return textspeech_component.flush();
-      });
-
-      currentSchedule.onComplete.schedule(() => textspeech_component.component.remove());
     });
+
+    tearDown(() => textspeech_component.component.remove());
 
 
     test("element exists", () {

@@ -2,32 +2,28 @@ part of fun_components_test;
 
 class RomanNumeralComponent extends PageComponent {
 
-  RomanNumeralComponent(el, number) : super(el) {
-    component.number = number;
-  }
+  RomanNumeralComponent(el) : super(el);
 }
 
 roman_numerals_test() {
   group("[roman-numerals]", () {
     var roman_component;
     setUp(() {
-      schedule(() {
-        Completer completer = new Completer();
-        new Timer(new Duration(milliseconds: 200), () {
-          completer.complete();
-        });
-
-        return completer.future;
+      Completer completer = new Completer();
+      new Timer(new Duration(milliseconds: 200), () {
+        completer.complete();
       });
-      currentSchedule.onComplete.schedule(() => roman_component.component.remove());
+
+      return completer.future;
     });
 
+    tearDown(() => roman_component.component.remove());
 
     test("display 1 as I", () {
       schedule(() {
         PolymerElement el = createElement('<roman-numeral number="1"></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, 1);
+        roman_component = new RomanNumeralComponent(el);
 
         return roman_component.flush().then((_) => roman_component.flush());
       });
@@ -40,9 +36,9 @@ roman_numerals_test() {
 
     test("display 10 as X", () {
       schedule(() {
-        PolymerElement el = createElement('<roman-numeral></roman-numeral>');
+        PolymerElement el = createElement('<roman-numeral number="10"></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, 10);
+        roman_component = new RomanNumeralComponent(el);
 
         return roman_component.flush();
       });
@@ -55,9 +51,9 @@ roman_numerals_test() {
 
     test("display 9 as XL", () {
       schedule(() {
-        PolymerElement el = createElement('<roman-numeral></roman-numeral>');
+        PolymerElement el = createElement('<roman-numeral number="9"></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, 9);
+        roman_component = new RomanNumeralComponent(el);
 
         return roman_component.flush();
       });
@@ -70,9 +66,9 @@ roman_numerals_test() {
 
     test("display 2000 as MM", () {
       schedule(() {
-        PolymerElement el = createElement('<roman-numeral></roman-numeral>');
+        PolymerElement el = createElement('<roman-numeral number="2000"></roman-numeral>');
         document.body.append(el);
-        roman_component = new RomanNumeralComponent(el, 2000);
+        roman_component = new RomanNumeralComponent(el);
 
         return roman_component.flush();
       });
@@ -80,6 +76,29 @@ roman_numerals_test() {
 
       schedule(() {
         expect(roman_component.currentTextDisplay.trim(), equals('MM'));
+      });
+    });
+
+
+    group('from <content> of tag', () {
+      test('valid content', () {
+        PolymerElement el = createElement('<roman-numeral>10</roman-numeral>');
+        document.body.append(el);
+        roman_component = new RomanNumeralComponent(el);
+
+        roman_component.flush();
+
+        expect(roman_component.currentTextDisplay.trim(), 'X');
+      });
+
+      test('invalid content', () {
+        PolymerElement el = createElement('<roman-numeral>I</roman-numeral>');
+        document.body.append(el);
+        roman_component = new RomanNumeralComponent(el);
+
+        roman_component.flush();
+
+        expect(roman_component.currentTextDisplay.trim(), '');
       });
     });
 

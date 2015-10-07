@@ -39,12 +39,13 @@ Turns the number to the Roman Numeral:
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/roman-numeral.html">
   ...
 </head>
 <body>
   ...
   <roman-numeral number="10"></roman-numeral>
+  OR
+  <roman-numeral>10</roman-numeral>
   ...
 </body>
 ```
@@ -58,12 +59,13 @@ Turns the number to the written turkish word:
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/turkish-number.html">
   ...
 </head>
 <body>
   ...
   <turkish-number number="10"></turkish-number>
+  OR
+  <turkish-number>10</turkish-number>
   ...
 </body>
 ```
@@ -73,7 +75,6 @@ For the credit card verifier, which may or may not be usable in html forms:
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/creditcard-verifier.html">
   ...
 </head>
 <body>
@@ -88,7 +89,6 @@ For the Markdown element:
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/markdown-markup.html">
   ...
 </head>
 <body>
@@ -109,7 +109,6 @@ For Gravatar Image
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/gravatar-image.html">
   ...
 </head>
 <body>
@@ -127,7 +126,6 @@ For Text to Voice (a text to speech element)
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/text-speech.html">
   ...
 </head>
 <body>
@@ -143,7 +141,6 @@ For ajax get (an ajax element for doing get requests)
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/ajax-get.html">
   ...
 </head>
 <body>
@@ -175,7 +172,6 @@ For RSS Feeds
 ```
 <head>
   ...
-  <link rel="import" href="packages/fun_components/elements/rss-feed.html">
   ...
 </head>
 <body>

@@ -38,9 +38,12 @@ ajax_get_test() {
   FunAjaxComponent component;
   group('[ajax-get]', () {
     setUp(() {
-      currentSchedule.onComplete.schedule(() => component.component.remove());
+
     });
 
+    tearDown(() {
+      component.component.remove();
+    });
 
     test("Basic use", () {
       schedule(() {

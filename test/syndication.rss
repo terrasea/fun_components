@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+  <channel>
+    <title />
+    <description>Dartosphere - A planet and resource for the Dartlang community</description>
+    <link>http://www.dartosphere.org/</link>
+
+
+      <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/dartosphere" /><feedburner:info uri="dartosphere" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+        <title>One Yak Too Many?</title>
+        <author>Chris Strom (noreply@blogger.com)</author>
+        <description>&lt;div class=top-chain-links&gt;&lt;/div&gt;&lt;br /&gt;Yesterday I was able to get a &lt;a href="http://jenkins-ci.org/"&gt;Jenkins&lt;/a&gt; server up and running on a &lt;a href="http://linode.com"&gt;Linode&lt;/a&gt;, properly secured, and checking out &lt;a href="http://dartlang.org"&gt;Dart&lt;/a&gt; and JavaScript code for testing. Although the test script ran, I do not yet have a successful test—mostly due to lack of additional dependencies.&lt;br /&gt;&lt;br /&gt;I am still building this on a Debian 6 LTS Linode host. I continue working through the error messages as they occur on the server. First up: &lt;br /&gt;&lt;pre class=prettyprint&gt;scripts/test.sh: line 14: xvfb-run: command not found&lt;/pre&gt;That is easy enough:&lt;pre class=prettyprint&gt;$ sudo apt-get install xvfb&lt;/pre&gt;I was happy to discover &lt;code&gt;xvfb-run&lt;/code&gt;...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/RbPCWmdf_f4" height="1" width="1"/&gt;</description>
+        <pubDate>Tue, 09 Sep 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/RbPCWmdf_f4/one-yak-too-many.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/09/09/one-yak-too-many.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/09/09/one-yak-too-many.html</feedburner:origLink></item>
+
+      <item>
+        <title>Jenkins for Testing Dart and JavaScript Polymer</title>
+        <author>Chris Strom (noreply@blogger.com)</author>
+        <description>&lt;div class=top-chain-links&gt;&lt;/div&gt;&lt;br /&gt;It is entirely possible that I am too cheap. It is also possible that there is nothing out there that does exactly what I need it to do. So tonight, I set out to see how easy it is to roll my own.&lt;br /&gt;&lt;br /&gt;What I need is a continuous integration server for my books. I need a solution for all of my books, but if I can find something for &lt;a href="http://patternsinpolymer.com/"&gt;Patterns in Polymer&lt;/a&gt; which is written in both &lt;a href="http://dartlang.org"&gt;Dart&lt;/a&gt; and JavaScript, then I will likely have everything that I need.&lt;br /&gt;&lt;br /&gt;Some of the key...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/s7KN5lM6yy4" height="1" width="1"/&gt;</description>
+        <pubDate>Mon, 08 Sep 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/s7KN5lM6yy4/jenkins-for-testing-dart-and-javascript-polymer.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/09/08/jenkins-for-testing-dart-and-javascript-polymer.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/09/08/jenkins-for-testing-dart-and-javascript-polymer.html</feedburner:origLink></item>
+
+      <item>
+        <title>Failure: Expected Throw, Which Threw</title>
+        <author>Chris Strom (noreply@blogger.com)</author>
+        <description>&lt;div class=top-chain-links&gt;&lt;/div&gt;&lt;br /&gt;I got started with the errata for Beta 1.0 of &lt;a href="http://dart4hipsters.com/"&gt;Dart for &lt;strike&gt;Hipsters&lt;/strike&gt;&lt;/a&gt; er… &lt;a href="https://pragprog.com/titles/csdart1"&gt;Dart 1 for Everyone&lt;/a&gt; (not sure I'll ever get used to that). For the most part, it is pretty OK. There are issues, but nothing insurmountable. Except…&lt;br /&gt;&lt;br /&gt;One of my tests is failing. Or maybe not.&lt;br /&gt;&lt;br /&gt;I had all of my tests passing with Dart 1.5.8, but with 1.6.0, I find:&lt;pre class=prettyprint&gt;CONSOLE MESSAGE: FAIL: [bad invocation from noSuchMethod] cannot supply invocation mirror arguments&lt;br /&gt; Expected: throws 'Yikes _ajaxSave'&lt;br /&gt; Actual: &amp;lt;Closure: () =&gt; dynamic&gt;&lt;br /&gt; Which: threw 'Yikes _ajaxSave")'&lt;br /&gt;&lt;br...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/GN3dMUVDp78" height="1" width="1"/&gt;</description>
+        <pubDate>Sun, 07 Sep 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/GN3dMUVDp78/failure-expected-throw-which-threw.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/09/07/failure-expected-throw-which-threw.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/09/07/failure-expected-throw-which-threw.html</feedburner:origLink></item>
+
+      <item>
+        <title>Dart ray tracer benchmark (compared to C#)</title>
+        <author>Nino Porcino (hello@dartosphere.org)</author>
+        <description>&lt;p&gt;As an exercise in Dart programming, this morning I&amp;#39;ve ported &lt;a href="https://github.com/nippur72/Saltarelle.RaytracerDemo"&gt;this Raytracer demo&lt;/a&gt; from C# to Dart.&lt;/p&gt; &lt;p&gt;&lt;img src="/img/articles/2014/ray-tracer-in-dart/canvas1.png" alt="the new 3d test scene"&gt;&lt;/p&gt; &lt;p&gt;You can get it from &lt;a href="https://github.com/nippur72/Dart.RayTracerDemo"&gt;Github&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Two years ago, I&amp;#39;ve used the same raytracer program to compare the performances of two C#-to-JavaScript compilers, &lt;a href="http://jsil.org/"&gt;JSIL&lt;/a&gt; and &lt;a href="http://www.saltarelle-compiler.com/"&gt;Saltarelle&lt;/a&gt; (see my &lt;a href="http://ninoporcino.blogspot.it/2012/12/saltarelle-vs-jsil-raytracer-demo.html"&gt;blogpost&lt;/a&gt;).&lt;/p&gt; &lt;p&gt;Now I use the same program to compare C# and &lt;a href="http://dartlang.org/"&gt;Dart.&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Speed comparison is a marginal topic here (though it will be curious to see who&amp;#39;s fastest in rendering the raytraced scene), I am more interested in the overall programming experience...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/7s_IFsjXWdM" height="1" width="1"/&gt;</description>
+        <pubDate>Wed, 03 Sep 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/7s_IFsjXWdM/dart-ray-tracer-benchmark.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/dart/2014/09/03/dart-ray-tracer-benchmark.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/dart/2014/09/03/dart-ray-tracer-benchmark.html</feedburner:origLink></item>
+
+      <item>
+        <title>Polymer Expressions – Filtering</title>
+        <author>Matthew Butler</author>
+        <description>&lt;p&gt;&lt;img src="http://blog.butlermatt.me/wp-content/uploads/2014/08/polymer-logo.png" alt="polymer-logo" width="416" height="286" class="aligncenter size-full wp-image-162" /&gt;&lt;/p&gt; &lt;p&gt;Polymer is a great library. I use it every day and I&amp;#8217;m often finding hidden gems that make life so much easier. Today I wanted to touch on some goodness of Polymer Expressions. In particular setting up and using filters.&lt;/p&gt; &lt;p&gt;&lt;span id="more-186"&gt;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;It used to be that setting up filters in Polymer was a little bit of a task, having to create a new object which implemented or extended some kind of filter object. I don&amp;#8217;t recall now the details, just that I recall using it was very inconvenient. I&amp;#8217;m not...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/Ta_iES8X2hI" height="1" width="1"/&gt;</description>
+        <pubDate>Thu, 28 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/Ta_iES8X2hI/polymer-expressions-filtering.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/28/polymer-expressions-filtering.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/28/polymer-expressions-filtering.html</feedburner:origLink></item>
+
+      <item>
+        <title>When to TDD and When Not to TDD (an exercise with Polymer.dart)</title>
+        <author>Chris Strom (noreply@blogger.com)</author>
+        <description>&lt;div class=top-chain-links&gt;&lt;/div&gt;&lt;br /&gt;According to &lt;a href="http://japhr.blogspot.com/2014/08/git-subcommand-to-sort-by-last-modified.html"&gt;git lslt&lt;/a&gt;, it has been six months since I last updated the parent events chapter in &lt;a href="http://patternsinpolymer.com/"&gt;Patterns in Polymer&lt;/a&gt;. &lt;i&gt;Six months!&lt;/i&gt; &lt;br /&gt;&lt;br /&gt;I start my review, as always, with my tests:&lt;pre class=prettyprint&gt;$ pwd &lt;br /&gt;/home/chris/repos/polymer-book/book/code-dart/parent_events&lt;br /&gt;$ ls -l test&lt;br /&gt;total 0&lt;br /&gt;lrwxrwxrwx 1 chris chris 11 Dec 7 2013 packages -&gt; ../packages&lt;/pre&gt;Son of a… Bad developer! Bad author!&lt;br /&gt;&lt;br /&gt;I will not produce another edition without complete test coverage of the examples in the book. I will not worry about the code in the “play” area of the repository—that is mostly meant for...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/C7U1QhEG6c4" height="1" width="1"/&gt;</description>
+        <pubDate>Wed, 27 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/C7U1QhEG6c4/when-to-tdd-and-when-not-to-tdd-an-exercise-with-polymer.dart.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/27/when-to-tdd-and-when-not-to-tdd-an-exercise-with-polymer.dart.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/27/when-to-tdd-and-when-not-to-tdd-an-exercise-with-polymer.dart.html</feedburner:origLink></item>
+
+      <item>
+        <title>Side Effects may include… being wrong!</title>
+        <author>Matthew Butler</author>
+        <description>&lt;p&gt;&lt;img src="http://blog.butlermatt.me/wp-content/uploads/2014/08/side-effects1.png" alt="side-effects" width="800" height="143" class="aligncenter size-full wp-image-166" /&gt;&lt;/p&gt; &lt;p&gt;Yesterday, I wrote a post about &lt;a href="http://blog.butlermatt.me/2014/08/side-effects/" title="Side Effects"&gt;Side Effects&lt;/a&gt;. My post was based on observed behaviour, as opposed to the mechanics of the Dart VM. I am happy to report that my last post was &lt;strong&gt;wrong&lt;/strong&gt;. Yes I was wrong, and yes I am extremely happy about it! I received a number of comments indicating that no, Dart is a pass-by-value for everything. Additionally I received a number of comments indicating that Dart is actually always a pass-by-reference. In fact, both are correct&amp;#8230; sort of.&lt;/p&gt; &lt;p&gt;&lt;span id="more-181"&gt;&lt;/span&gt;&lt;/p&gt; &lt;p&gt;The fact...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/5bjvynge2fk" height="1" width="1"/&gt;</description>
+        <pubDate>Wed, 27 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/5bjvynge2fk/side-effects-may-include...-being-wrong.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/27/side-effects-may-include...-being-wrong.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/27/side-effects-may-include...-being-wrong.html</feedburner:origLink></item>
+
+      <item>
+        <title>Dart 1.6 adds support for deferred loading</title>
+        <author>Kevin Moore (noreply@blogger.com)</author>
+        <description>&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://4.bp.blogspot.com/-xIB6mO-T7NA/U_4ie87o1LI/AAAAAAAAB0A/agY16OrmSzI/s1600/dart_deferred.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://4.bp.blogspot.com/-xIB6mO-T7NA/U_4ie87o1LI/AAAAAAAAB0A/agY16OrmSzI/s1600/dart_deferred.png" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;/div&gt;Dart makes creating complex applications easy, but large code size can negatively affect startup time. Dart 1.6 added support for deferred loading, which allows developers to load libraries only when needed, allowing for quicker load times and a better user experience. The Dart site has an &lt;a href="https://www.dartlang.org/docs/spec/deferred-loading.html"&gt;article describing how to use deferred loading&lt;/a&gt; in your application.&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Dart 1.6 also contains a number improvements which improve the security of server applications. The Uri class is now more strict about malformed...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/2IattuzyaS8" height="1" width="1"/&gt;</description>
+        <pubDate>Wed, 27 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/2IattuzyaS8/dart-1.6-adds-support-for-deferred-loading.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/27/dart-1.6-adds-support-for-deferred-loading.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/27/dart-1.6-adds-support-for-deferred-loading.html</feedburner:origLink></item>
+
+      <item>
+        <title>Side Effects</title>
+        <author>Matthew Butler</author>
+        <description>&lt;p&gt;&lt;img class="aligncenter size-full wp-image-166" src="http://blog.butlermatt.me/wp-content/uploads/2014/08/side-effects1.png" alt="side-effects" width="800" height="143" /&gt;&lt;/p&gt; &lt;p&gt;&lt;del&gt;Dart, like many other languages, uses pass-by-reference for complex objects, and pass-by-value for simple objects.&lt;/del&gt; This can occasionally be confusing or surprising to someone new to the language. It may not always be clear when your function will have side effects or not. So I decided to create a simple project which helps highlight when you can expect your function to have side effects.&lt;/p&gt; &lt;p&gt;This post uses terminology which is totally wrong. &lt;strong&gt;See my follow up post &lt;a href="http://blog.butlermatt.me/2014/08/side-effects-may-include-being-wrong/" title="Side Effects may include… being wrong!"&gt;Side Effects may include&amp;#8230; Being Wrong!&lt;/a&gt;&lt;/strong&gt; The...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/P0H_wH6739A" height="1" width="1"/&gt;</description>
+        <pubDate>Tue, 26 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/P0H_wH6739A/side-effects.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/26/side-effects.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/26/side-effects.html</feedburner:origLink></item>
+
+      <item>
+        <title>New Redstone.dart plugin: redstone_web_socket</title>
+        <author>Luiz Mineo (luiz.mineo@gmail.com)</author>
+        <description>&lt;p&gt;A new Redstone.dart plugin is available on pub: &lt;a href="http://pub.dartlang.org/packages/redstone_web_socket"&gt;redstone_web_socket&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;This plugin is a wrapper to the &lt;a href="http://pub.dartlang.org/packages/shelf_web_socket"&gt;shelf_web_socket&lt;/a&gt; package. It provides a &lt;code&gt;@WebSocketHandler&lt;/code&gt; annotation, which can be used to define web socket handlers:&lt;/p&gt; &lt;div class="highlight"&gt;&lt;pre&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;WebSocketHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/ws&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;onConnection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;websocket&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;websocket&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;listen&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;websocket&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;echo &lt;/span&gt;&lt;span class="si"&gt;$&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;});&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;p&gt;The &lt;code&gt;@WebSocketHandler&lt;/code&gt; annotation can also be used with classes:&lt;/p&gt; &lt;div class="highlight"&gt;&lt;pre&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;WebSocketHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/ws&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ServerEndPoint&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span...&lt;img src="http://feeds.feedburner.com/~r/dartosphere/~4/5rJYUsXAnG0" height="1" width="1"/&gt;</description>
+        <pubDate>Tue, 26 Aug 2014 00:00:00 +0200</pubDate>
+        <link>http://feedproxy.google.com/~r/dartosphere/~3/5rJYUsXAnG0/new-redstone.dart-plugin-redstone-web-socket.html</link>
+        <guid isPermaLink="false">http://www.dartosphere.org/2014/08/26/new-redstone.dart-plugin-redstone-web-socket.html</guid>
+      <feedburner:origLink>http://www.dartosphere.org/2014/08/26/new-redstone.dart-plugin-redstone-web-socket.html</feedburner:origLink></item>
+
+  </channel>
+</rss>

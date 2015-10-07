@@ -43,6 +43,10 @@
 
 ## 0.5.2
 
-* Added <rss-feed ...> and <rss-item ..> elements
+* Added &lt;rss-feed ...&gt; and &lt;rss-item ..&gt; elements
 * Updated some of the elements to use _src and _href to overcome the problems with transformers rewriting them
- 
+
+## 0.6.0
+
+* Updated to Polymer 1.0.0-rc.1
+* Enabled both &lt;roman-numeral&gt; and &lt;turkish-number&gt; to use the value between the opening and closing tags

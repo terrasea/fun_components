@@ -3,12 +3,12 @@ part of fun_components_test;
 class CreditCardVerifierComponent extends PageComponent {
   CreditCardVerifierComponent(el) : super(el);
 
-  TextInputElement get currentCardNumberInput => component.$['cardnumber'];
+  TextInputElement get currentCardNumberInput => component.querySelector('#cardnumber');
   String get currentNumberValue => component.number;
   String get currentCSSBorderErrorColour => component.errorColour;
 
   Future updateNumberValue(val) {
-    component.number = val;
+    component.set('number', val);
 
     return flush();
   }
@@ -34,9 +34,11 @@ credit_card_verifier_test() {
         return ccv_component.flush();
       });
 
-      currentSchedule.onComplete.schedule(() => ccv_component.component.remove());
     });
 
+    tearDown(() {
+      ccv_component.component.remove();
+    });
 
     test('outlines in red, card number input, on invalid card number', () {
       schedule(() {

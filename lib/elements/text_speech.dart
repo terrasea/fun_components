@@ -1,11 +1,13 @@
+@HtmlImport('text-speech.html')
 library fun_components.text_speech;
 
 import 'dart:html' show ContentElement, window, SpeechSynthesisUtterance, SpeechRecognition, SpeechRecognitionEvent, querySelector;
 
 import 'package:polymer/polymer.dart';
+import 'package:web_components/web_components.dart';
 
 
-@CustomTag('text-speech')
+@PolymerRegister('text-speech')
 class TextVoiceElement extends PolymerElement {
   var synthesiser = new SpeechSynthesiser(window.speechSynthesis);
 

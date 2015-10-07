@@ -1,13 +1,11 @@
-<link rel="import" href="../../../packages/polymer/polymer.html">
-
-<polymer-element name="rss-item" attributes="title link description">
+<dom-module id="rss-item">
   <template>
     <header>
       <h3>
-        <a _href="{{ link }}">{{ title }}</a>
+        <a href="[[link]]">[[rssTitle]]</a>
       </h3>
     </header>
     <div id="description"></div>
   </template>
   <script type="application/dart" src="rss_item.dart"></script>
-</polymer-element>
+</dom-module>
